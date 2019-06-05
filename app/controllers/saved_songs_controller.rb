@@ -1,6 +1,6 @@
 class SavedSongsController < ApplicationController
   def index
-    @saved_songs = SavedSong.all
+    @saved_songs = SavedSong.page(params[:page]).per(10)
 
     render("saved_song_templates/index.html.erb")
   end
