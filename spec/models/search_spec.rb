@@ -4,6 +4,8 @@ RSpec.describe Search, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_one(:saved_song) }
+
     it { should belong_to(:user) }
 
     end
