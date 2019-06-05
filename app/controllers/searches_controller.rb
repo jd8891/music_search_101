@@ -55,6 +55,14 @@ class SearchesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @search = Search.find(params.fetch("id_to_remove"))
+
+    @search.destroy
+
+    redirect_to("/users/#{@search.user_id}", notice: "Search deleted successfully.")
+  end
+
   def destroy_row
     @search = Search.find(params.fetch("id_to_remove"))
 

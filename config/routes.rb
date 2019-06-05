@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_search/:id_to_remove", { :controller => "searches", :action => "destroy_row" })
+  get("/delete_search_from_user/:id_to_remove", { :controller => "searches", :action => "destroy_row_from_user" })
 
   #------------------------------
 
