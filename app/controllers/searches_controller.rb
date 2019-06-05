@@ -44,7 +44,7 @@ class SearchesController < ApplicationController
 
     @search.text = params.fetch("text")
     @search.song_saved = params.fetch("song_saved")
-    @search.user_id = params.fetch("user_id")
+    
 
     if @search.valid?
       @search.save
