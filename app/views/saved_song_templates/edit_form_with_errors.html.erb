@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for search_id start -->
-    <input type="text" id="search_id" name="search_id" class="form-control" value="<%= @saved_song.search_id %>">
+    <%= select_tag(:search_id, options_from_collection_for_select(Search.all, :id, :song_saved, @saved_song.search_id), :class => "form-control") %>
     <!-- Input for search_id end -->
   </div>
   <!-- Label and input for search_id end -->
