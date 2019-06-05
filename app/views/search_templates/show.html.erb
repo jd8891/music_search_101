@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Search #<%= @search.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/searches" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link search start -->
+      <div class="col">
+        <a href="/searches/<%= @search.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit search
+        </a>
+      </div>
+      <!-- Edit link search end -->
+
+      <!-- Delete link search start -->
+      <div class="col">
+        <a href="/delete_search/<%= @search.id %>" class="btn btn-block btn-outline-secondary">
+          Delete search
+        </a>
+      </div>
+      <!-- Delete link search end -->
+    </div>
+
+    <dl>
+      <dt>
+        Text
+      </dt>
+      <!-- Display text start -->
+      <dd>
+        <%= @search.text %>
+      </dd>
+      <!-- Display text end -->
+
+      <dt>
+        Song saved
+      </dt>
+      <!-- Display song_saved start -->
+      <dd>
+        <%= @search.song_saved %>
+      </dd>
+      <!-- Display song_saved end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @search.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@search.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@search.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
