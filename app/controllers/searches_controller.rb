@@ -10,7 +10,8 @@ class SearchesController < ApplicationController
   end
 
   def index
-    @searches = Search.page(params[:page]).per(10)
+    @q = Search.ransack(params[:q])
+    @searches = @q.result(:distinct => true).includes(:user, :saved_song).page(params[:page]).per(10)
 
     render("search_templates/index.html.erb")
   end
