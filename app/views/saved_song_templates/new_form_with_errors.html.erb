@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @saved_song.present? %>
   <% if @saved_song.errors.any? %>
     <% @saved_song.errors.full_messages.each do |message| %>
@@ -16,21 +15,15 @@
 
 <hr>
 
-<!-- Form saved_song start -->
 <form action="/create_saved_song" method="post">
-<!-- Form saved_song end -->
 
-  <!-- Label and input for search_id start -->
   <div class="form-group">
     <label for="search_id">
       Search
     </label>
 
-    <!-- Input for search_id start -->
     <%= select_tag(:search_id, options_from_collection_for_select(Search.all, :id, :song_saved, @saved_song.search_id), :class => "form-control") %>
-    <!-- Input for search_id end -->
   </div>
-  <!-- Label and input for search_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create saved song

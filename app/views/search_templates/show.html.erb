@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link search start -->
       <div class="col">
         <% if current_user == @search.user %>
           <a href="/searches/<%= @search.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link search end -->
 
-      <!-- Delete link search start -->
       <div class="col">
         <% if current_user == @search.user %>
           <a href="/delete_search/<%= @search.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,32 +26,26 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link search end -->
     </div>
 
     <dl>
       <dt>
         Text
       </dt>
-      <!-- Display text start -->
       <dd>
         <%= @search.text %>
       </dd>
-      <!-- Display text end -->
 
       <dt>
         Song saved
       </dt>
-      <!-- Display song_saved start -->
       <dd>
         <%= @search.song_saved %>
       </dd>
-      <!-- Display song_saved end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @search.user.present? %>
           <a href="/users/<%= @search.user_id %>">
@@ -62,28 +53,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@search.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@search.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
