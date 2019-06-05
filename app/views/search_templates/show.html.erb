@@ -56,7 +56,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @search.user_id %>
+        <% if @search.user.present? %>
+          <a href="/users/<%= @search.user_id %>">
+            <%= @search.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

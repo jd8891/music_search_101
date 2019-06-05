@@ -34,7 +34,11 @@
       </dt>
       <!-- Display search_id start -->
       <dd>
-        <%= @saved_song.search_id %>
+        <% if @saved_song.search.present? %>
+          <a href="/searches/<%= @saved_song.search_id %>">
+            <%= @saved_song.search.song_saved %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display search_id end -->
 

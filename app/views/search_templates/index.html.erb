@@ -74,7 +74,11 @@
 
         <!-- Display search.user_id start -->
         <td>
-          <%= search.user.email %>
+          <% if search.user.present? %>
+            <a href="/users/<%= search.user.id %>">
+              <%= search.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display search.user_id end -->
 

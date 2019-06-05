@@ -54,7 +54,11 @@
 
         <!-- Display saved_song.search_id start -->
         <td>
-          <%= saved_song.search.song_saved %>
+          <% if saved_song.search.present? %>
+            <a href="/searches/<%= saved_song.search.id %>">
+              <%= saved_song.search.song_saved %>
+            </a>
+          <% end %>
         </td>
         <!-- Display saved_song.search_id end -->
 
