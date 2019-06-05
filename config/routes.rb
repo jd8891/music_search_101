@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "searches#index"
   # Routes for the Saved song resource:
 
   # CREATE
