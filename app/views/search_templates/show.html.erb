@@ -13,17 +13,21 @@
 
       <!-- Edit link search start -->
       <div class="col">
-        <a href="/searches/<%= @search.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit search
-        </a>
+        <% if current_user == @search.user %>
+          <a href="/searches/<%= @search.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit search
+          </a>
+        <% end %>
       </div>
       <!-- Edit link search end -->
 
       <!-- Delete link search start -->
       <div class="col">
-        <a href="/delete_search/<%= @search.id %>" class="btn btn-block btn-outline-secondary">
-          Delete search
-        </a>
+        <% if current_user == @search.user %>
+          <a href="/delete_search/<%= @search.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete search
+          </a>
+        <% end %>
       </div>
       <!-- Delete link search end -->
     </div>
